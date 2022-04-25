@@ -18,6 +18,7 @@ map('n', '<leader>cf', ':cfdo %s/')
 map('n', '<leader>cp', ':cprev<cr>zz')
 map('n', '<leader>cn', ':cnext<cr>zz')
 
+-- TODO: This is going to conflict with nvim-cmp. Need to address this
 -- buffer navigation
 map('n', '<Tab>', ':bnext<cr>')
 map('n', '<S-Tab>', ':bprev<cr>')
