@@ -30,18 +30,6 @@ local config = {
       -- Enable rust_analyzer
       rust_analyzer = true,
 
-      -- Enable tsserver w/custom settings
-      tsserver = {
-        -- Disable formatting (defaults to true)
-        format = false,
-        -- OR add/override server options
-        opts = {
-          on_attach = function(client, bufnr) end,
-          flags = {
-            debounce_text_changes = 150,
-          },
-        },
-      },
       -- See Cosmic defaults lsp/providers/null_ls.lua and https://github.com/jose-elias-alvarez/null-ls.nvim/
       -- If adding additional sources, be sure to also copy the defaults that you would like to preserve from lsp/providers/null_ls.lua
       null_ls = {
@@ -51,8 +39,6 @@ local config = {
         sources = {},
       },
     },
-    -- See Cosmic defaults lsp/providers/tsserver.lua
-    ts_utils = {},
   },
   -- See https://github.com/ray-x/lsp_signature.nvim#full-configuration-with-default-values
   lsp_signature = {},

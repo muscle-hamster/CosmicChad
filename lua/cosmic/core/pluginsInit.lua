@@ -24,7 +24,8 @@ return packer.startup(function()
   })
 
   -- theme stuff
-  use({ -- statusline
+  -- statusline
+  use({
     'NTBBloodbath/galaxyline.nvim',
     branch = 'main',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -34,7 +35,7 @@ return packer.startup(function()
     after = user_config.theme,
     disable = vim.tbl_contains(user_config.disable_builtin_plugins, 'galaxyline'),
   })
-
+  --
   -- file explorer
   use({
     'kyazdani42/nvim-tree.lua',
@@ -72,15 +73,15 @@ return packer.startup(function()
     requires = {
       { 'b0o/SchemaStore.nvim' },
       { 'williamboman/nvim-lsp-installer' },
-      { 'jose-elias-alvarez/nvim-lsp-ts-utils' },
-      {
-        'jose-elias-alvarez/null-ls.nvim',
-        config = function()
-          require('cosmic.lsp.providers.null_ls')
-        end,
-        disable = vim.tbl_contains(user_config.disable_builtin_plugins, 'null-ls'),
-        after = 'nvim-lspconfig',
-      },
+      -- { 'jose-elias-alvarez/nvim-lsp-ts-utils' },
+      -- {
+      --   'jose-elias-alvarez/null-ls.nvim',
+      --   config = function()
+      --     require('cosmic.lsp.providers.null_ls')
+      --   end,
+      --   disable = vim.tbl_contains(user_config.disable_builtin_plugins, 'null-ls'),
+      --   after = 'nvim-lspconfig',
+      -- },
       {
         'ray-x/lsp_signature.nvim',
         config = function()
@@ -126,6 +127,16 @@ return packer.startup(function()
     disable = vim.tbl_contains(user_config.disable_builtin_plugins, 'nvim-cmp'),
   })
 
+  -- bufferline
+  use(
+    {
+      'akinsho/bufferline.nvim',
+      tag = "*",
+      requires = 'kyazdani42/nvim-web-devicons',
+      config = function()
+        require('cosmic.plugins.bufferline')
+      end,
+    })
   -- git commands
   use({
     'tpope/vim-fugitive',

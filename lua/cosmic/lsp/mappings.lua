@@ -42,13 +42,6 @@ function M.init(client, bufnr)
     '<leader>wl',
     '<cmd>lua require("cosmic.utils.logger"):log(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>'
   )
-
-  if client.name == 'tsserver' then
-    -- typescript helpers
-    buf_map(bufnr, 'n', '<leader>gr', ':TSLspRenameFile<CR>')
-    buf_map(bufnr, 'n', '<leader>go', ':TSLspOrganize<CR>')
-    buf_map(bufnr, 'n', '<leader>gi', ':TSLspImportAll<CR>')
-  end
 end
 
 return M

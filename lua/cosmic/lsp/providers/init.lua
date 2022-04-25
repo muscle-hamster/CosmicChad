@@ -19,7 +19,6 @@ lsp_installer.settings({
 })
 
 -- initial default servers
--- by default tsserver/ts_utils and null_ls are enabled
 local requested_servers = {}
 
 -- get disabled servers from config
@@ -48,15 +47,13 @@ lsp_installer.on_server_ready(function(server)
   local opts = default_config
 
   -- disable server if config disabled server list says so
-  opts.autostart = true
+  opts.autostart = false
   if vim.tbl_contains(disabled_servers, server.name) then
     opts.autostart = false
   end
 
   -- set up default cosmic options
-  if server.name == 'tsserver' then
-    opts = u.merge(opts, require('cosmic.lsp.providers.tsserver'))
-  elseif server.name == 'jsonls' then
+  if server.name == 'jsonls' then
     opts = u.merge(opts, require('cosmic.lsp.providers.jsonls'))
   elseif server.name == 'pyright' then
     opts = u.merge(opts, require('cosmic.lsp.providers.pyright'))

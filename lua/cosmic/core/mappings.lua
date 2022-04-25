@@ -19,9 +19,15 @@ map('n', '<leader>cp', ':cprev<cr>zz')
 map('n', '<leader>cn', ':cnext<cr>zz')
 
 -- buffer navigation
-map('n', '<leader>bp', ':bprev<cr>')
-map('n', '<leader>bn', ':bnext<cr>')
+map('n', '<Tab>', ':bnext<cr>')
+map('n', '<S-Tab>', ':bprev<cr>')
 map('n', '<leader>bd', ':bdelete<cr>')
+
+-- buffer split navigation
+map('n', '<C-h>', '<C-w>h')
+map('n', '<C-j>', '<C-w>j')
+map('n', '<C-k>', '<C-w>k')
+map('n', '<C-l>', '<C-w>l')
 
 -- tab navigation
 map('n', '<leader>tp', ':tabprevious<cr>')

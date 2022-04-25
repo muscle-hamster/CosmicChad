@@ -111,7 +111,7 @@ CosmicNvim comes with first-class support for the following themes:
 ### Update CosmicNvim
 
 ```vimcommand
-:CosmicUpdate
+:BroUpdate
 ```
 
 By default, this will assume the Cosmic git directory is placed at `vim.fn.stdpath('config')`, i.e. `~/.config/nvim`.
@@ -120,7 +120,7 @@ Otherwise, you may define the shell environment variable `COSMICNVIM_INSTALL_DIR
 ### Clear cache and sync plugins
 
 ```vimcommand
-:CosmicReloadSync
+:BroReloadSync
 ```
 
 Useful for testing themes or plugins on the fly!
@@ -128,7 +128,7 @@ Useful for testing themes or plugins on the fly!
 ### Reload user config
 
 ```vimcommand
-:CosmicReload
+:BroReload
 ```
 
 Useful for non-plugin related changes such as editor settings or mappings.

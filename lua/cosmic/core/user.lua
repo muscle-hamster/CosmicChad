@@ -11,7 +11,7 @@ local default_config = {
   add_plugins = {},
   theme = 'tokyonight',
   lsp = {
-    format_on_save = true, -- true/false or table of filetypes {'.ts', '.js',}
+    format_on_save = false, -- true/false or table of filetypes {'.ts', '.js',}
     format_timeout = 3000,
     rename_notification = true,
     servers = {
@@ -23,9 +23,6 @@ local default_config = {
         format = false,
       },
       html = true,
-      tsserver = {
-        format = false,
-      },
     },
   },
 }
