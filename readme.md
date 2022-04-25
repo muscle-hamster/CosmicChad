@@ -69,9 +69,9 @@ experience with any LSP supported language._
   # back up current config
   cp -r nvim nvim.backup
   # clone repository
-  git clone git@github.com:CosmicNvim/CosmicNvim.git nvim
+  git clone git@github.com:muscle-hamster/CosmicChad.git nvim
   # open nvim and install plugins
-  nvim +CosmicReloadSync
+  nvim +BroReloadSync
 ```
 
 Additional CosmicNvim installation [details](https://github.com/CosmicNvim/CosmicNvim/wiki/Installation).
