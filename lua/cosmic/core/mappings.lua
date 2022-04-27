@@ -22,7 +22,7 @@ map('n', '<leader>cn', ':cnext<cr>zz')
 -- buffer navigation
 map('n', '<Tab>', ':bnext<cr>')
 map('n', '<S-Tab>', ':bprev<cr>')
-map('n', '<leader>bd', ':bdelete<cr>')
+map('n', '<leader>bd', ':BufferLinePickClose<cr>')
 
 -- buffer split navigation
 map('n', '<C-h>', '<C-w>h')
