@@ -60,7 +60,10 @@ opt.sidescrolloff = 3 -- Lines to scroll horizontally
 opt.signcolumn = 'yes'
 opt.splitbelow = true -- Open new split below
 opt.splitright = true -- Open new split to the right
-opt.wrap = false
+opt.wrap = true
+opt.wrapmargin = 0
+opt.textwidth = 0
+opt.linebreak = true
 
 -- backups
 opt.backup = false
