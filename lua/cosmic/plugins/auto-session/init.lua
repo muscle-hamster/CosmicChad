@@ -7,6 +7,7 @@ local defaults = {
   auto_session_enabled = true,
   auto_save_enabled = true,
   auto_restore_enabled = true,
+  auto_session_use_git_branch = true,
 }
 
 require('auto-session').setup(u.merge(defaults, config.auto_session or {}))
