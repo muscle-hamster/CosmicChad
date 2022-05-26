@@ -187,6 +187,15 @@ return packer.startup(function()
     disable = vim.tbl_contains(user_config.disable_builtin_plugins, 'telescope'),
   })
 
+  use({
+    'ahmedkhalf/project.nvim',
+    config = function()
+      require("project_nvim").setup {
+        event = 'BufEnter',
+      }
+    end
+  })
+
   -- session/project management
   use({
     'glepnir/dashboard-nvim',
@@ -248,6 +257,16 @@ return packer.startup(function()
       require('colorizer').setup()
     end,
     disable = vim.tbl_contains(user_config.disable_builtin_plugins, 'colorizer'),
+  })
+  --
+  -- init.lua
+  use({
+    'lukas-reineke/indent-blankline.nvim',
+    opt = true,
+    event = 'BuffRead',
+    config = function()
+      require('cosmic.plugins.indent-blankline')
+    end,
   })
 
   if user_config.add_plugins and not vim.tbl_isempty(user_config.add_plugins) then
