@@ -191,7 +191,7 @@ return packer.startup(function()
     'ahmedkhalf/project.nvim',
     config = function()
       require("project_nvim").setup {
-        event = 'BufEnter',
+        event = 'BufRead',
       }
     end
   })
@@ -263,7 +263,7 @@ return packer.startup(function()
   use({
     'lukas-reineke/indent-blankline.nvim',
     opt = true,
-    event = 'BuffRead',
+    event = 'BufEnter',
     config = function()
       require('cosmic.plugins.indent-blankline')
     end,
