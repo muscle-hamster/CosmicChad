@@ -6,26 +6,7 @@ local augroup_name = 'CosmicNvimNvimTree'
 local group = vim.api.nvim_create_augroup(augroup_name, { clear = true })
 
 -- settings
-g.nvim_tree_git_hl = 1
-g.nvim_tree_refresh_wait = 300
-
-g.nvim_tree_special_files = {}
-
-g.nvim_tree_icons = {
-  default = '',
-  symlink = icons.symlink,
-  git = icons.git,
-  folder = icons.folder,
-
-  lsp = {
-    hint = icons.hint,
-    info = icons.info,
-    warning = icons.warn,
-    error = icons.error,
-  },
-}
-
-g.nvim_tree_respect_buf_cwd = 1
+--[[ g.nvim_tree_refresh_wait = 300 ]]
 
 -- set up args
 local args = {
@@ -56,4 +37,20 @@ vim.api.nvim_create_autocmd('BufEnter', {
   nested = true,
 })
 
-require('nvim-tree').setup(u.merge(args, config.nvim_tree or {}))
+require('nvim-tree').setup(u.merge(args, config.nvim_tree or {
+  respect_buf_cwd = true,
+  git_highlight = true,
+  render = {
+    default = '',
+    symlink = icons.symlink,
+    git = icons.git,
+    folder = icons.folder,
+
+    lsp = {
+      hint = icons.hint,
+      info = icons.info,
+      warning = icons.warn,
+      error = icons.error,
+    },
+  }
+}))

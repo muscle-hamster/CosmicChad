@@ -3,6 +3,10 @@ local cosmic_packer = require('cosmic.packer')
 local packer = cosmic_packer.packer
 local use = packer.use
 
+-- TODO: add wilder.nvim. Wilder.nvim is a command line auto-completion plugin
+-- TODO: add mason.nvim to replace LSPInstaller.
+-- TODO: Replace forked version of Galaxyline with original plugin
+
 return packer.startup(function()
   use({
     'wbthomason/packer.nvim',
@@ -23,8 +27,12 @@ return packer.startup(function()
     disable = vim.tbl_contains(user_config.disable_builtin_plugins, 'notify'),
   })
 
+  use({
+    'kyazdani42/nvim-web-devicons',
+  })
   -- theme stuff
   -- statusline
+  -- TODO: change this to normal galaxyline
   use({
     'NTBBloodbath/galaxyline.nvim',
     branch = 'main',
